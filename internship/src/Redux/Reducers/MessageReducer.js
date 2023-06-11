@@ -1,25 +1,25 @@
-import { ADD_USER_MSG, FETCH_MSG } from "../Types/ActionTypes";
+import { ADD_USER_MSG, FETCH_MSG, CLEAR_USER_MSG } from "../Types/ActionTypes";
 
 const msg = [
   {
     bot: "Hello, welcome to student info system!",
-    button: "Got it",
-    user: "",
+    btn: "Got it",
+    user: null,
   },
   {
     bot: "Enter your name",
-    button: "",
-    user: "",
+    btn: null,
+    user: null,
   },
   {
     bot: "Enter your age",
-    button: "",
-    user: "",
+    btn: null,
+    user: null,
   },
   {
     bot: "Thank you",
-    button: "",
-    user: "",
+    btn: null,
+    user: null,
   },
 ];
 
@@ -30,6 +30,9 @@ export default (message = msg, action) => {
       return message;
     case ADD_USER_MSG:
       message[action.payload.index].user = action.payload.userMsg;
+      return message;
+    case CLEAR_USER_MSG:
+      message = msg;
       return message;
     default:
       return message;

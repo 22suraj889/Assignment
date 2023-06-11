@@ -6,7 +6,7 @@ const Home = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <p className="text-center font-bold text-4xl mt-8">
+      <p className="p-4 text-center font-bold text-4xl mt-8">
         Enter into Student Info System
       </p>
       <img

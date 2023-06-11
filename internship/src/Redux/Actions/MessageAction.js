@@ -1,4 +1,4 @@
-import { ADD_USER_MSG, FETCH_MSG } from "../Types/ActionTypes";
+import { ADD_USER_MSG, CLEAR_USER_MSG, FETCH_MSG } from "../Types/ActionTypes";
 
 export const fetchMessage = () => {
   return {
@@ -11,5 +11,12 @@ export const addUserMessage = (userMsg, index) => {
   return {
     type: ADD_USER_MSG,
     payload: { userMsg, index },
+  };
+};
+
+export const clearUserMessage = () => {
+  return {
+    type: CLEAR_USER_MSG,
+    payload: null,
   };
 };

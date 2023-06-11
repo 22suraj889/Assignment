@@ -1,7 +1,16 @@
 import { combineReducers } from "redux";
-import TypingReducer from "./ChangeCounterReducer";
+import CounterReducer from "./ChangeCounterReducer";
 import MessageReducer from "./MessageReducer";
-export default combineReducers({
-  typing: TypingReducer,
+const appReducer = combineReducers({
+  counter: CounterReducer,
   allChat: MessageReducer,
 });
+
+const rootReducer = (state, action) => {
+  if (action.type === "USER_EXIT") {
+    const { routing } = state;
+    state = { routing };
+  }
+  return appReducer(state, action);
+};
+export default rootReducer;
